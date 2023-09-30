@@ -1,22 +1,10 @@
-import sys
+import pygame
 
-def main():
-    print("Listening for input. Press Ctrl+C to exit.")
-    
-    try:
-        while True:
-            user_input = input()
-            
-            # Check for specific keys
-            if user_input.lower() == "exit":
-                print("Exiting...")
-                break
-            elif user_input.lower() == "hello":
-                print("Hello there!")
-            else:
-                print("Unknown command:", user_input)
-    except KeyboardInterrupt:
-        print("\nExiting...")
+pygame.init()
 
-if __name__ == "__main__":
-    main()
+class Input:
+    @staticmethod
+    def detect(key, action):
+        keys = pygame.key.get_pressed()
+        if keys[key]:
+            action()
