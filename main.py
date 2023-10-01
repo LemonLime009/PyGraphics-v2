@@ -1,14 +1,7 @@
 from src.matrix import Matrix
 from src.clock import Clock
-from src.input import Input
 
-Display = Matrix(20,20)
-Clock = Clock(60)
-Input = Input()
+matrix = Matrix(20,20)
+clock = Clock(30)
 
-Display.clear(1)
-
-def hello():
-    print("HElLo")
-
-Input.detect("K_LEFT", hello)
+matrix.clear(1)
